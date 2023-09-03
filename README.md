@@ -17,13 +17,15 @@ main:
 mod loader;
 use loader::LoadMod;
 
-let dll = LoadMod::new("my_dll/target/release/my_dll.dll").unwrap();
+{
+    let dll = LoadMod::new("my_dll/target/release/my_dll.dll").unwrap();
 
-// Use this proc macro and all the work around will be handled
-let result = call_function!(&dll_handle, fn() -> i32, "hello_from_dll");
+    // Use this proc macro and all the work around will be handled
+    let result = call_function!(&dll_handle, fn() -> i32, "hello_from_dll");
 
-result();
-// Memory will be automatically freed
+    result();
+    // Memory will be automatically freed
+}
 ```
 
 output
