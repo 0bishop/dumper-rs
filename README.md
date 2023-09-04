@@ -1,5 +1,5 @@
 # lib-load
-A litle lib binding around LoadLibraryA and GetProcAddress from winapi crate in order to hide imports functions from winapi
+A little lib binding around LoadLibraryA and GetProcAddress from winapi crate in order to hide imports functions from winapi
 
 ## Usage
 *Refer to main.rs for more documentation about Error handling.*
