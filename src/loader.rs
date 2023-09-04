@@ -44,7 +44,6 @@ impl Drop for LoadMod {
 }
 
 // macro to call the function, and convert the function pointer to the defined function type
-#[macro_export]
 macro_rules! call_function {
     ($dll_handle:expr, $type:ty, $name:expr) => {
         {
@@ -59,3 +58,5 @@ macro_rules! call_function {
         }
     };
 }
+
+pub(crate) use call_function;
