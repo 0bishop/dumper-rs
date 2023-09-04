@@ -14,13 +14,13 @@ fn main() {
     let dll_handle = dll_handle.unwrap();
     // Load the function pointer dynamically
     // Convert the function pointer to the defined function type
-    let result = call_function!(&dll_handle, fn() -> i32, "hello_from_dll");
+    let result = loader::call_function!(&dll_handle, fn() -> i32, "hello_from_dll");
 
     let out = result();
     // Now, you can call the hello_from_dll function
     println!("Function result: {}", out);
 
-    let add_function = call_function!(&dll_handle, fn(c_int, c_int) -> c_int, "add");
+    let add_function = loader::call_function!(&dll_handle, fn(c_int, c_int) -> c_int, "add");
     let result = add_function(1, 2);
     println!("Function result: {}", result);
 
