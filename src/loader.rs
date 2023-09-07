@@ -48,12 +48,7 @@ macro_rules! call_function {
     ($dll_handle:expr, $type:ty, $name:expr) => {
         {
             // Change crate::loader to your mod name
-            let handle = crate::loader::LoadMod::get_function($dll_handle, $name);
-            if handle.is_err() {
-                eprintln!("Failed to get function pointer: {}", handle.err().unwrap());
-                return;
-            }
-            let function: $type =  unsafe { std::mem::transmute(handle.unwrap()) };
+            let function: $type =  unsafe { std::mem::transmute(LoadMod::get_function($dll_handle, $name).expect("Failed to get ptr")) };
             function
         }
     };
