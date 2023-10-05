@@ -1,4 +1,4 @@
-# lib-load
+# dumper-rs
 A little lib binding in order to hide imports functions from winapi.
 0 Call to winapi, everything has been recoded from scratch
 
