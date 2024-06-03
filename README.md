@@ -1,6 +1,7 @@
 # dumper-rs
 A little lib binding in order to hide imports functions from winapi.
-0 Call to winapi, everything has been recoded from scratch
+0 Call to winapi, everything has been recoded from scratch.  
+Will not load the module for you, just dumping functions address through PEB.  
 
 ## Usage
 *Refer to main.rs for more documentation about Error handling.*
